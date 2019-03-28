@@ -1,0 +1,161 @@
+
+.App {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top:5%;
+  margin-bottom: 5%; 
+ 
+  text-align: center;
+  /* background: #d8d410; */
+  /* background:linear-gradient(120deg, #a1a46f 0%,#d8d410 6%,#c68b20 43%,#e0801a 61%,#ac2438 100% ); */
+  /* background:linear-gradient(120deg, #a1a46f 0%,#d8d410 6%,#c68b20 37%,#e0801a 76%,#ac2438 100% ); */
+  background-color: rgba(224,128,26,0.95);
+  background: linear-gradient(120deg, rgba(161,164,111,0.95) 0%,rgba(216,212,16,0.95) 6%,rgba(198,139,32,0.95) 37%,rgba(224,128,26,0.95) 76%,rgba(172,36,56,0.6) 100% );
+  background-image: -webkit-linear-gradient(120deg, rgba(161,164,111,0.95) 0%,rgba(216,212,16,0.95) 6%,rgba(198,139,32,0.95) 37%,rgba(224,128,26,0.95) 76%,rgba(172,36,56,0.6) 100% ); 
+  background-image:    -moz-linear-gradient(120deg, rgba(161,164,111,0.95) 0%,rgba(216,212,16,0.95) 6%,rgba(198,139,32,0.95) 37%,rgba(224,128,26,0.95) 76%,rgba(172,36,56,0.6) 100% ); 
+  background-image:     -ms-linear-gradient(120deg, rgba(161,164,111,0.95) 0%,rgba(216,212,16,0.95) 6%,rgba(198,139,32,0.95) 37%,rgba(224,128,26,0.95) 76%,rgba(172,36,56,0.6) 100% ); 
+  background-image:      -o-linear-gradient(120deg, rgba(161,164,111,0.95) 0%,rgba(216,212,16,0.95) 6%,rgba(198,139,32,0.95) 37%,rgba(224,128,26,0.95) 76%,rgba(172,36,56,0.6) 100% ); 
+
+  /* opacity: ; */
+
+  border-radius: 20px;
+  overflow: visible;
+}
+.App img{ 
+  border-radius: 10px;
+  opacity: 1;
+  /* display: inline-block	; */
+  display: center	;
+
+  /* margin: 2%; */
+  max-height: 300px;
+  max-width: 300px;
+}
+.App button{
+  opacity: 1;
+  /* margin-bottom: 2%; */
+  border-radius: 20px;
+  /* padding: 1%; */
+
+}
+.App a{
+  text-decoration: none;
+}
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out 500ms;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in-out;
+}
+body{
+
+  background: url('https://static.tonkosti.ru/tonkosti/table_img/g192/4848/148667724.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+.react-draggable, .cursor {
+  cursor: move;
+}
+
+svg {
+  position: absolute;
+}
+
+.boldinoElement {
+  opacity: .3;
+}
+
+.boldinoElement:hover {
+transition: opacity .2s ease;
+opacity: .7;
+}
+
+.DetailedInfoWindow {
+height: 110%;
+}
+
+.mapWrapper {
+  overflow: hidden;
+}
+
+.divider {
+  margin: 280px;
+}
+
+.infoText {
+  left: 10%;
+}
+
+.imgWrap {
+width: 100%;
+height: 300px;
+position: relative;
+display: inline-block;
+overflow: hidden;
+margin: 0;
+}
+
+.sightImg {
+display: block;
+position: absolute;
+top: 50%;
+left: 50%;
+max-height: 100%;
+max-width: 100%;
+transform: translate(-50%, -50%);
+}
+
+.boldinoMapImg {/*
+  max-width: 4580px !important;
+  max-height: 6436px !important;
+  */
+  max-width: 9000px !important;
+  max-height: 13000px !important;
+  margin: 0% !important;
+}
+
+.mapZoomSlider {
+  height: 500px !important;
+}
+
+.mapZoomSlider input {
+  transform: rotate(-90deg) !important;
+}
+
+.mapZoomButton {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  max-height: 100px !important;
+  position: fixed;
+}
+.mapZoomButton input {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  max-height: 100px !important;
+  position: fixed;
+}
+
+.mapZoomInButton {
+  top: 10%;
+  right: 10%;
+}
+.mapZoomOutButton {
+  top: calc(10% + 100px);
+  right: 10%;
+}
