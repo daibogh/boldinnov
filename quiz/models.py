@@ -9,6 +9,11 @@ class Quiz(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to=RandomFileName('quiz/img'), blank=True)
 
+    def __str__(self):
+        return self.title
+    class Meta:
+            verbose_name = 'Жанр викторины'
+            verbose_name_plural = 'Жанры викторины'
 
 class Question(models.Model):
     id = models.AutoField(primary_key=True)
@@ -30,3 +35,9 @@ class Question(models.Model):
 
     questionImg = models.ImageField(upload_to=RandomFileName('quiz/img'), blank=True)
     descriptionImg = models.ImageField(upload_to=RandomFileName('quiz/img'), blank=True)
+
+    def __str__(self):
+        return "викторина " + self.quiz.title + " - " + self.question
+    class Meta:
+            verbose_name = 'Вопрос'
+            verbose_name_plural = 'Вопросы'
