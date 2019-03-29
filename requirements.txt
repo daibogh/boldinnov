@@ -1,0 +1,5 @@
+Pillow
+django
+djangorestframework
+django-cors-headers
+django-webpack-loader

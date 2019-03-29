@@ -1,0 +1,47 @@
+.backgroundImg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    margin: 50%;
+  }
+  
+  .container {
+      position: relative;
+  }
+  .container > div {
+      position: absolute;
+  }
+  .button {
+      display: block;
+      height: 100px;
+      width: 100px;
+      border: 1px solid #aaa;
+      border-radius: 25px;
+      font: bold 20px Helvetica, Arial, sans-serif;
+      text-align: center;
+      line-height: 100px;
+      cursor: pointer;
+      color: #fff;
+      background-color: #000;
+      /* Define transition on the "opacity" property. */    
+      transition: opacity 500ms ease-in;
+  }
+  .example-enter {
+    opacity: 0.01;
+  }
+  
+  .example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out 500ms;
+  }
+  
+  .example-leave {
+    opacity: 1;
+  }
+  
+  .example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 500ms ease-in-out;
+  }

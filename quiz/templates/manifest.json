@@ -1,0 +1,15 @@
+{
+  "short_name": "Приложение boldinnov",
+  "name": "Приложение boldinnov by daibogh",
+  "icons": [
+    {
+      "src": "/media/favicon.ico",
+      "sizes": "512x512 256x256 192x192 144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/quiz/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
