@@ -21,9 +21,7 @@ const LoadedMapModel = types.model(
     self => ({
         initLoad(data:any){
             console.log("LoadedMapModel")
-            console.log(data);
             data.map((instance: { id: string; title: string; description: string;  img: string; }) => {
-                console.log("CP_1")
                 self.items.push(MapObjectModel.create({
                     id:parseInt(instance.id),
                     title: instance.title,
@@ -32,14 +30,11 @@ const LoadedMapModel = types.model(
                 }))
             });
 
-            console.log("CP_2")
             self.items = data;
             self.SVGClickablesData.clear();
             let ellipses:any = new SVGHelper().getEllipses(boldinoSvg);
-            console.log("CP_3")
-            console.log(ellipses)
+            ellipses = ellipses.slice(0, data.length)
             ellipses.map((instance: { cx: string; cy: string; rx: string;  ry: string; }) => {
-                console.log("CP_1")
                 self.SVGClickablesData.push(MapObjectPositionModel.create({
                     cx: instance.cx.toString(),
                     cy: instance.cy.toString(),
@@ -76,10 +71,8 @@ const LoadedMapModel = types.model(
                 });
         },
         GetSVGClickableForRender(scale_koef:any):any {
-            console.log("GetSVGClickableForRender " + scale_koef)
             let clickables = [];
 
-            console.log(self.SVGClickablesData)
             for (let i = 0; i < self.SVGClickablesData.length; ++i) {
                 let data:any = {
                     objectNumber: self.items[i].id,
