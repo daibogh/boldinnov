@@ -7,7 +7,8 @@ import SVGHelper from "./SVGHelper";
 import * as React from "react";
 
 
-const boldinoSvg = "/static/src/img/map3.svg"
+//const boldinoSvg = "/static/src/img/map3.svg"
+const boldinoSvg = "/static/src/img/map_new.svg"
 
 
 const LoadedMapModel = types.model(
@@ -76,10 +77,10 @@ const LoadedMapModel = types.model(
             for (let i = 0; i < self.SVGClickablesData.length; ++i) {
                 let data:any = {
                     objectNumber: self.items[i].id,
-                    cx: parseInt(self.SVGClickablesData[i].cx) * scale_koef,
-                    cy: parseInt(self.SVGClickablesData[i].cy) * scale_koef,
-                    rx: parseInt(self.SVGClickablesData[i].rx) * scale_koef,
-                    ry: parseInt(self.SVGClickablesData[i].ry) * scale_koef,
+                    cx: parseInt(self.SVGClickablesData[i].cx),
+                    cy: parseInt(self.SVGClickablesData[i].cy),
+                    rx: parseInt(self.SVGClickablesData[i].rx),
+                    ry: parseInt(self.SVGClickablesData[i].ry),
                     callback: self,
                 };
                 clickables.push(
