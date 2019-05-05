@@ -13,20 +13,31 @@ import Divider from "@material-ui/core/Divider";
 import ZoomButton from '../ZoomButton'
 
 class map_block extends React.Component{
-    BoldinoImg = "/static/src/img/map.jpg";
+    //BoldinoImg = "/static/src/img/map.jpg";
+    BoldinoImg = "/static/src/img/map_new.jpg";
     ZoomInImg = "/static/src/img/zoomIn.png";
     ZoomOutImg = "/static/src/img/zoomOut.png";
     state = {
         status:'not_success',
         scale_koef: 1,
         windowHeight: 4580,
-        windowWidth: 6436,
+        windowWidth: 4000,
     };
 
     scaleOpt = {
         step: 0.1,
         max: 1.5,
-        min: 0.5,
+        min: 0.3,
+        beforeMin: 0.4,
+    }
+
+    constructor(props: any) {
+        super(props);
+
+        this.scaleOpt.min = Math.max((window.innerWidth / 4580) * 0.75, window.innerHeight / 4000);
+        this.scaleOpt.beforeMin = (Math.floor(this.scaleOpt.min * 10) + 1) / 10;
+
+        this.state.scale_koef = this.scaleOpt.min;
     }
 
     handleResize = () => this.setState({
@@ -49,7 +60,10 @@ class map_block extends React.Component{
     }
 
     calculateScale(koef:any) {
-        return this.clamp(this.state.scale_koef + koef * this.scaleOpt.step, this.scaleOpt.max, this.scaleOpt.min);
+        var val = this.clamp(this.state.scale_koef + koef * this.scaleOpt.step, this.scaleOpt.max, this.scaleOpt.min);
+        if (val == this.scaleOpt.min + this.scaleOpt.step) val = this.scaleOpt.beforeMin;
+
+        return val;
     }
 
     render() {
@@ -83,15 +97,15 @@ class map_block extends React.Component{
                             <Paper className="mapWrapper">
                                 <Draggable 
                                     bounds={{
-                                        top: (-6436 * this.state.scale_koef) + this.state.windowHeight,
-                                        left: (-4580 * this.state.scale_koef) + this.state.windowWidth,
+                                        top: (-4000 * this.state.scale_koef) + this.state.windowHeight,
+                                        left: (-4580 * this.state.scale_koef) + this.state.windowWidth * 0.75,
                                         right: 0,
                                         bottom: 0}}>
                                     <div>
-                                        <svg className="boldinoSVG" width={4580 * this.state.scale_koef} height={6436 * this.state.scale_koef} >
+                                        <svg className="boldinoSVG" width={4580 * this.state.scale_koef} height={4000 * this.state.scale_koef} >
                                             {MapModel.loaded_map.GetSVGClickableForRender(this.state.scale_koef)}
                                         </svg>
-                                        <img className="boldinoMapImg" width={4580 * this.state.scale_koef} height={6436 * this.state.scale_koef} src={this.BoldinoImg} alt="image"/>
+                                        <img className="boldinoMapImg" width={4580 * this.state.scale_koef} height={4000 * this.state.scale_koef} src={this.BoldinoImg} alt="image"/>
                                     </div>
                                 </Draggable>
                                 <ZoomButton className="mapZoomButton mapZoomInButton"
